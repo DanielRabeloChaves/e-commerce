@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  mysqlDB:
+    image: mysql:8.2
+    environment:
+      MYSQL_HOST: mysqlDB
+      MYSQL_ROOT_PASSWORD: docker
+      MYSQL_DATABASE: ecommerceDB
+      MYSQL_USER: docker
+      MYSQL_PASSWORD: docker
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  backend:
+    build:
+      context: ./BackEnd
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./BackEnd:/BackEnd
+      - /BackEnd/node_modules
+    env_file:
+      - ./BackEnd/.env
+    depends_on:
+      - mysqlDB
+      
+volumes:
+  mysql_data:
