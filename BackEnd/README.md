@@ -6,8 +6,6 @@ Este projeto de back-end utiliza a arquitetura MVC (Model-View-Controller) com N
 ## src
 Contém os arquivos principais de configuração e inicialização da aplicação.
 
-![alt text](../../Docs/Arquitetura/MVC.drawio.png)
-
 ### Models - Interfaces
 Os Models representam a estrutura dos dados e são responsáveis por interagir diretamente com o banco de dados. Eles contêm as definições das entidades e os métodos para acessar e manipular esses dados. Alem de conter as interfaces que descrevem a estrutura dos dados usados na aplicação, facilitando o uso do TypeScript para tipagem estática.
 
