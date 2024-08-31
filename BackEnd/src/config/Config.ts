@@ -4,7 +4,7 @@ import { ErrorRateLimit } from '../lang/pt-br/error';
 
 class Config{
     public configRateLimit(maxLimit?: number, timeWaitMinutes?: number){
-        const defaultMinute: number = timeWaitMinutes ? timeWaitMinutes *  60  *  1000 : 15  *  60  *  1000; // 15 Minutos
+        const defaultMinute: number = timeWaitMinutes ? timeWaitMinutes *  60  *  1000 : 15  *  60  *  1000; // x Minutos ou 15 Minutos
         const defaultLimit: number = maxLimit ? maxLimit : 100;
         const messageLimite: string = ErrorRateLimit(defaultLimit, timeWaitMinutes);
         const limiterDataFile = {windowMs : defaultMinute , max: defaultLimit,  message: {error: messageLimite},} ;

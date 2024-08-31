@@ -38,6 +38,8 @@ Esse arquivo vai conter as variaveis de ambiente para conexão com banco de dado
 ```
 
 DB_dialect=mysql
+Ambient_Dev=true
+Ambient_Language=pt-br
 
 DB_host=mysqlDB
 DB_user=docker
@@ -45,8 +47,11 @@ DB_password=docker
 DB_database=ecommerceDB
 DB_port=3306
 
-Ambient_Dev=true
-Ambient_Language=pt-br
+EMAIL_USER=email@teste
+EMAIL_PASS=password
+EMAIL_HOST=host
+EMAIL_PORT=465
+EMAIL_SECURE=true
 
 ```
 

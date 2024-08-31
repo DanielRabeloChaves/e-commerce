@@ -21,6 +21,9 @@ module.exports = {
     await queryInterface.bulkInsert('type_access_user', [
       {
         name: 'ADMIN'
+      },
+      {
+        name: 'COMUM'
       }
     ])
 
