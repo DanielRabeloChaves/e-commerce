@@ -1,6 +1,6 @@
 import ExemploMethods from "../models/exemploModel/ExemploMethods";
-import { IExemplo } from "../models/_interfaces/exemplo/IExemplo";
-import { IError } from "../models/_interfaces/IError";
+import { IExemplo } from "../interfaces/exemplo/IExemplo";
+import { IError } from "../interfaces/IError";
 import Exemplo, { ExemploCreationAttributes } from "../models/exemploModel/Exemplo";
 import { Transaction } from "sequelize";
 

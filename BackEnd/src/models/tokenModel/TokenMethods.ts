@@ -1,6 +1,6 @@
 import { Transaction } from 'sequelize';
-import { IToken } from '../_interfaces/token/IToken';
-import { IError } from '../_interfaces/IError';
+import { IToken } from '../../interfaces/token/IToken';
+import { IError } from '../../interfaces/IError';
 import Token, { TokenCreationAttributes, TokenUpdateAttributes } from './Token';
 import MessageError from '../../lang/MessageError';
 

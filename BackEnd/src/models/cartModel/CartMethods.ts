@@ -1,6 +1,6 @@
 import { Transaction } from 'sequelize';
-import { ICart } from '../_interfaces/cart/ICart';
-import { IError } from '../_interfaces/IError';
+import { ICart } from '../../interfaces/cart/ICart';
+import { IError } from '../../interfaces/IError';
 import Cart, { CartCreationAttributes, CartUpdateAttributes } from './Cart';
 import MessageError from '../../lang/MessageError';
 import User from '../userModel/User';

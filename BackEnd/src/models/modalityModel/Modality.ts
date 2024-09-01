@@ -1,6 +1,6 @@
 import { Model, Optional } from "sequelize";
 import sequelize  from '../../config/dataBase/connection'
-import { IModality } from "../_interfaces/modality/IModality";
+import { IModality } from "../../interfaces/modality/IModality";
 import ModalityAttributes from './ModalityAttributes'
 
 export interface ModalityCreationAttributes extends Optional<IModality, 'id' | 'createdAt' | 'updatedAt'> {}

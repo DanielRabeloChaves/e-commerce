@@ -1,6 +1,6 @@
 import { Model, Optional } from "sequelize";
 import sequelize  from '../../config/dataBase/connection'
-import { ICart } from "../_interfaces/cart/ICart";
+import { ICart } from "../../interfaces/cart/ICart";
 import CartAttributes from './CartAttributes'
 import Modality from "../modalityModel/Modality";
 import User from "../userModel/User";

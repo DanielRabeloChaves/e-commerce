@@ -1,6 +1,6 @@
 import { Model, Optional } from "sequelize";
 import sequelize  from '../../config/dataBase/connection'
-import { IUser } from "../_interfaces/user/IUser";
+import { IUser } from "../../interfaces/user/IUser";
 import UserAttributes from './UserAttributes'
 import TypeAccessUser from "../typeAccessUserModel/TypeAccessUser";
 

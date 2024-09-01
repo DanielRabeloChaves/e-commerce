@@ -1,6 +1,6 @@
 import { Transaction } from 'sequelize';
-import { ITypeAccessUser } from '../_interfaces/typeAccessUser/ITypeAccessUser';
-import { IError } from '../_interfaces/IError';
+import { ITypeAccessUser } from '../../interfaces/typeAccessUser/ITypeAccessUser';
+import { IError } from '../../interfaces/IError';
 import TypeAccessUser, { TypeAccessUserCreationAttributes, TypeAccessUserUpdateAttributes } from './TypeAccessUser';
 import MessageError from '../../lang/MessageError';
 

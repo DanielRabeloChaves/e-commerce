@@ -1,6 +1,6 @@
 import { Model, Optional } from "sequelize";
 import sequelize  from '../../config/dataBase/connection'
-import { ITypeAccessUser } from "../_interfaces/typeAccessUser/ITypeAccessUser";
+import { ITypeAccessUser } from "../../interfaces/typeAccessUser/ITypeAccessUser";
 import TypeAccessUserAttributes from './TypeAccessUserAttributes'
 
 export interface TypeAccessUserCreationAttributes extends Optional<ITypeAccessUser, 'id' |'createdAt' | 'updatedAt'> {}

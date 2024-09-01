@@ -1,6 +1,6 @@
 import { Model, Optional } from "sequelize";
 import sequelize  from '../../config/dataBase/connection'
-import { IProduct } from "../_interfaces/product/IProduct";
+import { IProduct } from "../../interfaces/product/IProduct";
 import ProductAttributes from './ProductAttributes'
 
 export interface ProductCreationAttributes extends Optional<IProduct, 'id' | 'photo' | 'rule' | 'porcent' |'createdAt' | 'updatedAt'> {}

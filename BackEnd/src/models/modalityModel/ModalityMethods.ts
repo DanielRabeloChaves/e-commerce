@@ -1,6 +1,6 @@
 import { Transaction } from 'sequelize';
-import { IModality } from '../_interfaces/modality/IModality';
-import { IError } from '../_interfaces/IError';
+import { IModality } from '../../interfaces/modality/IModality';
+import { IError } from '../../interfaces/IError';
 import Modality, { ModalityCreationAttributes, ModalityUpdateAttributes } from './Modality';
 import MessageError from '../../lang/MessageError';
 

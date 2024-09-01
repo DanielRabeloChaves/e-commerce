@@ -1,6 +1,6 @@
 import { Model, Optional } from "sequelize";
 import sequelize  from '../../config/dataBase/connection'
-import { IExemplo } from "../_interfaces/exemplo/IExemplo";
+import { IExemplo } from "../../interfaces/exemplo/IExemplo";
 import ExemploAttributes from './ExemploAttributes'
 
 // Atributos necessários para criação (id e data_criacao são opcionais)

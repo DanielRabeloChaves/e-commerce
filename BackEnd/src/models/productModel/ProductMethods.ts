@@ -1,6 +1,6 @@
 import { Transaction } from 'sequelize';
-import { IProduct } from '../_interfaces/product/IProduct';
-import { IError } from '../_interfaces/IError';
+import { IProduct } from '../../interfaces/product/IProduct';
+import { IError } from '../../interfaces/IError';
 import Product, { ProductCreationAttributes, ProductUpdateAttributes } from './Product';
 import MessageError from '../../lang/MessageError';
 

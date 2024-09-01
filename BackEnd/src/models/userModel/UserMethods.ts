@@ -1,7 +1,7 @@
 import { Transaction } from 'sequelize';
-import { IUser } from '../_interfaces/user/IUser';
-import { IError } from '../_interfaces/IError';
-import { IUserDto } from '../_interfaces/user/IUserDto'
+import { IUser } from '../../interfaces/user/IUser';
+import { IError } from '../../interfaces/IError';
+import { IUserDto } from '../../interfaces/user/IUserDto'
 import User, { UserCreationAttributes, UserUpdateAttributes } from './User';
 import MessageError from '../../lang/MessageError';
 import TypeAccessUser from '../typeAccessUserModel/TypeAccessUser';

@@ -1,9 +1,9 @@
 import UserMethods from "../models/userModel/UserMethods";
 import TokenMethods from "../models/tokenModel/TokenMethods";
-import { IUser } from "../models/_interfaces/user/IUser";
-import { IUserDto } from "../models/_interfaces/user/IUserDto";
-import { IUserAuthenticationDto } from "../models/_interfaces/user/IUserAuthenticationDto";
-import { IError } from "../models/_interfaces/IError";
+import { IUser } from "../interfaces/user/IUser";
+import { IUserDto } from "../interfaces/user/IUserDto";
+import { IUserAuthenticationDto } from "../interfaces/user/IUserAuthenticationDto";
+import { IError } from "../interfaces/IError";
 import User, { UserCreationAttributes } from "../models/userModel/User";
 
 import SecurityHelpers from "../helpers/SecurityHelpers";
@@ -18,7 +18,7 @@ import bcrypt from 'bcryptjs';
 import { v4 as uuidv4 } from 'uuid';
 import jwt from 'jsonwebtoken';
 import { secretKey } from "../token";
-import { IAuthentication } from "../models/_interfaces/user/IAuthentication";
+import { IAuthentication } from "../interfaces/user/IAuthentication";
 
 
 class UserService{

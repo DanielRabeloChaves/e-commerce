@@ -11,9 +11,9 @@ dist/
 ├── lang/
 │ ├── pt-br.ts
 │ └── en-un.ts
+├── interfaces/
+│ └── IUser.ts
 ├── models/
-│ ├── interfaces/
-│   ├── IUser.ts
 │ └── modelUser/
 │   ├── User.ts
 │   ├── UserAttributes.ts
@@ -45,13 +45,10 @@ Os Models representam a estrutura dos dados e são responsáveis por interagir d
 ```
 
 ├── models/
-│ ├── interfaces
-│ │ └── IUser.ts
 │ └── modelUser
 │ │ └── User.ts                            -- Montar a estrutura da tabela
 │ │ └── UserAttributes.ts                  -- Definir os atributos das colunas da tabela
 │ │ └── UserMethods.ts                     -- Criar os métodos de retorno. 
-
 
 ```
 

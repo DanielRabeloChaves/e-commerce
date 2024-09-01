@@ -1,6 +1,6 @@
 import { Model, Optional } from "sequelize";
 import sequelize  from '../../config/dataBase/connection'
-import { IToken } from "../_interfaces/token/IToken";
+import { IToken } from "../../interfaces/token/IToken";
 import TokenAttributes from './TokenAttributes'
 
 export interface TokenCreationAttributes extends Optional<IToken, 'id' | 'createdAt' | 'updatedAt'> {}

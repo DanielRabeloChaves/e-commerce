@@ -1,6 +1,6 @@
 import { Transaction } from 'sequelize';
-import { IExemplo } from '../_interfaces/exemplo/IExemplo';
-import { IError } from '../_interfaces/IError';
+import { IExemplo } from '../../interfaces/exemplo/IExemplo';
+import { IError } from '../../interfaces/IError';
 import Exemplo, { ExemploCreationAttributes, ExemploUpdateAttributes } from './Exemplo';
 import MessageError from '../../lang/MessageError';
 
