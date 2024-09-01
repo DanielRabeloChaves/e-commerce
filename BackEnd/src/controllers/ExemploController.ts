@@ -11,7 +11,7 @@ class ExemploController{
             if ('error' in result)
                 return res.status(400).json({error: result.error});
             if(!result)
-                return res.status(400).json({error: await MessageError.NotFoundError('Exemplo')});
+                return res.status(404).json({error: await MessageError.NotFoundError('Exemplo')});
 
             return res.status(200).json(result);    
         }catch(err){
@@ -24,7 +24,7 @@ class ExemploController{
             const id: number = parseInt(req.query.id as string, 10); // 10 - Converte o id para número decimal
             const result = await ExemploService.getExemploByID(id);
             if(!result)
-                return res.status(400).json({error: await MessageError.NotFoundError('Exemplo', id)});
+                return res.status(404).json({error: await MessageError.NotFoundError('Exemplo', id)});
             if ('error' in result)
                 return res.status(400).json({error: result.error});
 

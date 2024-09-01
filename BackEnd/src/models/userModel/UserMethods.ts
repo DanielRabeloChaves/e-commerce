@@ -49,6 +49,7 @@ class UserMethods{
               });
             return result;
         }catch(err){
+            console.log(err)
             const error: IError = {error: await MessageError.ErrorExecuteQuery(`${err}`), table: 'User'};
             return error;
         }
@@ -72,6 +73,26 @@ class UserMethods{
             return error; 
         }
     }
+
+    public async getByID(id: number):  Promise<IUserDto | IError | null>{
+        try{
+            const result = await User.findOne({
+                attributes: { exclude: ['password'] },
+                where: {
+                    id: id,
+                },
+                include: [{
+                    model: TypeAccessUser,
+                    as: 'typeAccessUser'
+                }]
+            });
+            return result;
+        }catch(err){
+            const error: IError = await {error: await MessageError.ErrorExecuteQuery(`${err}`), table: 'User'};
+            return error; 
+        }
+    }
+    
 
 }
 

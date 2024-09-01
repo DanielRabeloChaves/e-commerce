@@ -108,6 +108,7 @@ class UserService{
             return { error: await MessageError.ExpiredToken(), table: 'Token' };
           
           const dataUser = {
+              id: user.id,
               uid: user.uid,
               name: user.name,
               type_access_user_id: user.type_access_user_id,

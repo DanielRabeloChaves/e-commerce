@@ -10,3 +10,5 @@ export const SuccessDeleted = (name: string, id: number):string => `${name} com 
 export const SendToken = ():string => `Token de acesso enviado ao email cadastrado.`;
 export const Login = ():string => `Login efetuado com sucesso.`;
 export const ValidToken = ():string => `Token valido.`;
+
+export const CartProdut = ():string => `Produto adicionado ao carrinho com sucesso.`;

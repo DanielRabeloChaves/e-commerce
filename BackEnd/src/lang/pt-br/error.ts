@@ -27,3 +27,5 @@ export const ExpiredToken = ():string => `Token de acesso expirado.`;
 export const SendEmail = ():string => `Erro ao enviar email.`;
 
 export const AccessDenied = ():string => `Acesso negado.`;
+
+export const NotFoundCart = ():string => `Não possui nenhum produto no carrinho.`;

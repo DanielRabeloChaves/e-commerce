@@ -40,6 +40,11 @@ class MessageSuccess{
         const messages = await this.getMessages();
         return messages.ValidToken();
     }
+
+    public async CartProdut(): Promise<string>{
+        const messages = await this.getMessages();
+        return messages.CartProdut();
+    }
     
 }
 

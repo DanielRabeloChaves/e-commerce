@@ -106,6 +106,10 @@ class MessageError{
         return messages.AccessDenied();
     }
     
+    public async NotFoundCart(): Promise<string>{
+        const messages = await this.getMessages();
+        return messages.NotFoundCart();
+    }
 }
 
 export default new MessageError;

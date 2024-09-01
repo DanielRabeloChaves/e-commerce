@@ -41,6 +41,18 @@ class ModalityMethods{
         }
     }
 
+    public async getByCod(cod: string):  Promise<IModality | IError | null>{
+        try{
+            const result = await Modality.findOne({
+                where: { cod: cod }
+            });
+            return result;
+        }catch(err){
+            const error: IError = await {error: await MessageError.ErrorExecuteQuery(`${err}`), table: 'Modality'};
+            return error; 
+        }
+    }
+
 }
 
 export default new ModalityMethods();

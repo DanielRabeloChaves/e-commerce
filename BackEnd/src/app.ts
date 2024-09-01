@@ -8,6 +8,9 @@ import { UnknownError } from './lang/pt-br/error';
 import exemploRoutes from './routes/exemploRoutes';
 import userRoutes from './routes/userRoutes';
 import verifyToken from './routes/verifyToken';
+import modality from './routes/modalityRoutes';
+import product from './routes/productRoutes';
+import cart from './routes/cartRoutes';
 
 const app = express()
 
@@ -39,6 +42,9 @@ app.use((req: Request, res: Response, next: NextFunction)=>{
 app.use('/api/exemplo', exemploRoutes);
 app.use('/api/user', userRoutes);
 app.use('/api/token', verifyToken);
+app.use('/api/modality', modality);
+app.use('/api/product', product);
+app.use('/api/cart', cart);
 
 app.use((req: Request, res: Response, next: NextFunction) => {
     try{

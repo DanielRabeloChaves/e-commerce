@@ -35,17 +35,17 @@ Cart.init(CartAttributes, {
     }
 );
 
-User.belongsTo(User, {
+Cart.belongsTo(User, {
     foreignKey: 'user_id',
     as: 'user'
 });
 
-User.belongsTo(Product, {
+Cart.belongsTo(Product, {
     foreignKey: 'product_id',
     as: 'product'
 });
 
-User.belongsTo(Modality, {
+Cart.belongsTo(Modality, {
     foreignKey: 'modality_id',
     as: 'modality'
 });

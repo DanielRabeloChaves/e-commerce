@@ -54,9 +54,9 @@ class CartMethods{
         }
     }
 
-    public async getByUID(uid: string):  Promise<ICart | IError | null>{
+    public async getAllByUID(uid: string):  Promise<ICart[] | IError | null>{
         try{
-            const result = await Cart.findOne({
+            const result = await Cart.findAll({
                 include: [{model: User, as: 'user',  where: { uid: uid }, attributes: { exclude: ['password'] },},
                     {model: Product, as: 'product'},
                     {model: Modality, as: 'modality'},
@@ -68,7 +68,7 @@ class CartMethods{
             return error; 
         }
     }
-
+    
 }
 
 export default new CartMethods();

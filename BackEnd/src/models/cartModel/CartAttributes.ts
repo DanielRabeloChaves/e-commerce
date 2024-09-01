@@ -12,7 +12,7 @@ const CartAttributes = {
         references: {
             model: 'user',
             key: 'id'
-          }
+        }
     },
     product_id:{
         type: DataTypes.INTEGER,
