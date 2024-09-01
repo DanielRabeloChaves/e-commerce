@@ -15,23 +15,22 @@ const transporter = nodemailer.createTransport({
 interface EmailData {
     to: string;
     subject: string;
-    text?: string;
     html?: string;
 }
 
 async function sendEmail(data: EmailData) {
     try {
         const info = await transporter.sendMail({
-        from: `UPX5 <${process.env.EMAIL_USER}>`, // Corrigido para EMAIL_USER
+        from: `E-COMMERCE <${process.env.EMAIL_USER}>`, // Corrigido para EMAIL_USER
         to: data.to,
         subject: data.subject,
-        text: data.text,
+        text: "",
         html: data.html,
         });
-        return info;
+        return true;
     } catch (err) {
         console.error(err);
-        return { error: "Erro na tentativa de envio de E-mail" };
+        return false;
     }
 }
 

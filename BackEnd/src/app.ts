@@ -6,6 +6,8 @@ import { UnknownError } from './lang/pt-br/error';
 
 // Import Routes
 import exemploRoutes from './routes/exemploRoutes';
+import userRoutes from './routes/userRoutes';
+import verifyToken from './routes/verifyToken';
 
 const app = express()
 
@@ -33,7 +35,11 @@ app.use((req: Request, res: Response, next: NextFunction)=>{
         return res.status(405).json({ error: UnknownError(`${err}`)});
     }
 })
+
 app.use('/api/exemplo', exemploRoutes);
+app.use('/api/user', userRoutes);
+app.use('/api/token', verifyToken);
+
 app.use((req: Request, res: Response, next: NextFunction) => {
     try{
         const erro = new Error('Not Found');

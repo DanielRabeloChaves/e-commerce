@@ -81,6 +81,34 @@ Acessar os Serviços
 *   Verificar os Logs dos Contêineres
 ```docker-compose logs```
 
+*   Parar todos os containers em execução
+```docker stop $(docker ps -aq)```
+
+*   Remover todos os containers parados:
+```docker rm $(docker ps -aq)```
+
+*   Remover todos os volumes associados aos containers 
+```docker volume prune -f```
+
+*   Remover todas as redes criadas pelo Docker Compose
+```docker network prune -f```
+
+*   Remover todas as imagens
+```docker rmi $(docker images -aq)```
+
+*   Verificar containers
+```docker ps -a```
+
+*   Verificar volumes
+```docker volume ls```
+
+*   Verificar redes
+```docker network ls```
+
+*   Verificar imagens
+```docker images -a```
+
+
 ## Solução de Problemas
 *   Erros de Conexão com o MySQL: Verifique se o contêiner do MySQL está rodando e se as variáveis de ambiente estão corretas.
 *   Dependências do Backend: Certifique-se de que o volume node_modules está corretamente montado e que todas as dependências estão instaladas.

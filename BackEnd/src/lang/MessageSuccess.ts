@@ -26,6 +26,21 @@ class MessageSuccess{
         return messages.SuccessDeleted(name, id);
     }
 
+    public async Login(): Promise<string>{
+        const messages = await this.getMessages();
+        return messages.Login();
+    }
+
+    public async SendToken(): Promise<string>{
+        const messages = await this.getMessages();
+        return messages.SendToken();
+    }
+
+    public async ValidToken(): Promise<string>{
+        const messages = await this.getMessages();
+        return messages.ValidToken();
+    }
+    
 }
 
 export default new MessageSuccess;

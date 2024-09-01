@@ -4,7 +4,7 @@
 module.exports = {
   async up (queryInterface, Sequelize) {
 
-    await queryInterface.createTable('type_access_user', {
+    await queryInterface.createTable('typeAccessUser', {
       id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
@@ -15,30 +15,47 @@ module.exports = {
         type: Sequelize.STRING,
         unique: true,
         allowNull: false
+      },
+      createdAt: {
+        type: Sequelize.DATE,
+        allowNull: false
+      },
+      updatedAt: {
+        type: Sequelize.DATE,
+        allowNull: false
       }
     });
 
-    await queryInterface.bulkInsert('type_access_user', [
+    await queryInterface.bulkInsert('typeAccessUser', [
       {
-        name: 'ADMIN'
+        name: 'ADMIN',
+        createdAt: new Date(),
+        updatedAt: new Date(),
       },
       {
-        name: 'COMUM'
+        name: 'COMUM',
+        createdAt: new Date(),
+        updatedAt: new Date(),
       }
     ])
 
-   await queryInterface.createTable('users', {
+   await queryInterface.createTable('user', {
     id: {
       type: Sequelize.INTEGER,
       primaryKey: true,
       autoIncrement: true,
       allowNull: false
     },
+    uid: {
+      type: Sequelize.STRING,
+      unique: true,
+      allowNull: false
+    },
     type_access_user_id: {
       type: Sequelize.INTEGER,
       allowNull: false,
       references: {
-        model: 'type_access_user',
+        model: 'typeAccessUser',
         key: 'id'
       }
     },
@@ -55,6 +72,14 @@ module.exports = {
       type: Sequelize.STRING,
       allowNull: false
     },
+    cpf: {
+      type: Sequelize.STRING,
+      allowNull: true
+    },
+    phone: {
+      type: Sequelize.STRING,
+      allowNull: true
+    },
     createdAt: {
       type: Sequelize.DATE,
       allowNull: false
@@ -68,8 +93,8 @@ module.exports = {
   },
 
   async down (queryInterface, Sequelize) {
-    await queryInterface.dropTable('users');
-    await queryInterface.bulkDelete('type_access_user', {})
-    await queryInterface.dropTable('type_access_user');
+    await queryInterface.dropTable('user');
+    await queryInterface.bulkDelete('typeAccessUser', {})
+    await queryInterface.dropTable('typeAccessUser');
   }
 };
