@@ -1,44 +1,42 @@
 import { DataTypes } from 'sequelize';
 
-const UserAttributes = {
+const ProductAttributes = {
     id: {
       type: DataTypes.INTEGER.UNSIGNED,
       autoIncrement: true,
       primaryKey: true,
     },
-    uid:{
-        type: DataTypes.STRING(255),
-        unique: true,
-        allowNull: false,
-    },
-    type_access_user_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-          model: 'typeAccessUser',
-          key: 'id'
-        }
-    },
-    name: {
-      type: DataTypes.STRING(255),
-      allowNull: false,
-    },
-    login: {
-        type: DataTypes.STRING(255),
-        unique: true,
-        allowNull: false,
-    },
-    password: {
+    name:{
         type: DataTypes.STRING(255),
         allowNull: false,
     },
-    cpf: {
+    description:{
+        type: DataTypes.STRING(255),
+        allowNull: false,
+    },
+    photo: {
         type: DataTypes.STRING(255),
         allowNull: true,
     },
-    phone: {
-        type: DataTypes.STRING(255),
+    value: {
+        type: DataTypes.DECIMAL(10, 2),
+        allowNull: false,
+    },
+    promotion: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+    },
+    porcent: {
+        type: DataTypes.DECIMAL(5, 2),
         allowNull: true,
+    },
+    rule: {
+        type: DataTypes.STRING,
+        allowNull: true,
+    },
+    active: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
     },
     createdAt: {
       type: DataTypes.DATE,
@@ -50,4 +48,4 @@ const UserAttributes = {
     },
 }
 
-export default UserAttributes;
+export default ProductAttributes;

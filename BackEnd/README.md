@@ -53,6 +53,8 @@ EMAIL_HOST=host
 EMAIL_PORT=465
 EMAIL_SECURE=true
 
+SECRETKEY_HASH=SECRETKEY_HASH
+
 ```
 
 # Rodar projeto com DOCKER
@@ -70,6 +72,9 @@ Este comando irá construir as imagens Docker (se necessário) e iniciar os cont
 
 ## Rodar a aplicação:
 *   npm run dev
+
+## Criar Nova Migration
+*   npx sequelize-cli migration:generate --name add-new-column-to-users
 
 ### Script disponiveis package.json
 
