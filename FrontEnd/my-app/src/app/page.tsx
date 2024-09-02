@@ -1,9 +1,12 @@
+"use client";
+
+import Login from "../pages/login";
+import { PrimeReactProvider, PrimeReactContext } from 'primereact/api';
+
 export default function Home() {
   return (
     <main>
-      <h1>DAniel</h1>
-      <h1>DAniel</h1>
-      <h1>DAniel</h1>
+      <Login />
     </main>
   );
 }
