@@ -1,0 +1,25 @@
+.main-home{
+    height: 100%;
+    width: 100%;
+}
+
+article{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.main-box-product{
+    margin: 20px;
+    height: 90%;
+    width: 90%;
+    border-radius: 20px;
+    background-color: rgb(236, 235, 235);
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+.list-product{
+    width: 80vw;
+}
