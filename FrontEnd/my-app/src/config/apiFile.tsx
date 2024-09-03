@@ -9,10 +9,13 @@ const apiFile = axios.create({
   },
 });
 
-apiFile.interceptors.request.use(async config => {
-  const token = await sessionStorage.getItem('token');
-  config.headers.Authorization = `Bearer ${token}`;
-  return config;
-});
-
+if (typeof window !== 'undefined') {
+    apiFile.interceptors.request.use(async config => {
+        const token = sessionStorage.getItem('token');
+        if (token) {
+            config.headers.Authorization = `Bearer ${token}`;
+        }
+        return config;
+    });
+}
 export default apiFile;

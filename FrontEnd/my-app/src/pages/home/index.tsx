@@ -19,9 +19,8 @@ const Home = () => {
 
   useEffect(() => {
     const isAuthenticated = Boolean(sessionStorage.getItem('token'));
-    if (!isAuthenticated) {
+    if (!isAuthenticated)
       router.push('/login');
-    }
   }, [router]);
 
   return (

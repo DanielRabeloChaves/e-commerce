@@ -8,6 +8,8 @@ import ILogin from '@/interfaces/ILogin';
 import api from '@/config/api';
 import { Toast } from 'primereact/toast';
 import { AxiosError } from 'axios';
+import { useRouter } from 'next/navigation';
+
 
 interface IModalTokenProps {
     isOpen: boolean;
@@ -21,6 +23,7 @@ interface IModalTokenProps {
 const ModalToken: React.FC<IModalTokenProps> = ({ isOpen, onClose, children, login, password, status }) => {
     const [loginToken, setLoginToken] = useState<string | number | undefined | null>();
     const toast: any = useRef(null)
+    const router = useRouter();
     
     const apiAuthentication = async (dataUser: ILogin) => {
       try {
@@ -29,6 +32,7 @@ const ModalToken: React.FC<IModalTokenProps> = ({ isOpen, onClose, children, log
         if(data.status == "Success"){
           await sessionStorage.setItem('token', data.JWT);
           toast.current.show({ severity: 'success', summary: 'Success', detail: data.message, life: 4000 });
+          router.push('/home');
         }
       } catch (error) {
           const axiosObjectError = error as AxiosError
@@ -51,7 +55,6 @@ const ModalToken: React.FC<IModalTokenProps> = ({ isOpen, onClose, children, log
     };
 
     const handleAuthentication = () => {
-        console.log(loginToken?.toString().length)
         if(!loginToken || loginToken.toString().length != 5 || !login || !password)
           return;
         

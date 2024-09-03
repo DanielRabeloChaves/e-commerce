@@ -9,10 +9,13 @@ const api = axios.create({
   },
 });
 
-api.interceptors.request.use(async config => {
-  const token = await sessionStorage.getItem('token');
-  config.headers.Authorization = `Bearer ${token}`;
-  return config;
-});
-
+if (typeof window !== 'undefined') {
+    api.interceptors.request.use(async config => {
+        const token = sessionStorage.getItem('token');
+        if (token) {
+            config.headers.Authorization = `Bearer ${token}`;
+        }
+        return config;
+    });
+}
 export default api;

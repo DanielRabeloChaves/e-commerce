@@ -11,6 +11,7 @@ import verifyToken from './routes/verifyToken';
 import modality from './routes/modalityRoutes';
 import product from './routes/productRoutes';
 import cart from './routes/cartRoutes';
+import file from './routes/fileRoutes';
 
 const app = express()
 
@@ -45,6 +46,8 @@ app.use('/api/token', verifyToken);
 app.use('/api/modality', modality);
 app.use('/api/product', product);
 app.use('/api/cart', cart);
+app.use('/api/file', file)
+
 
 app.use((req: Request, res: Response, next: NextFunction) => {
     try{

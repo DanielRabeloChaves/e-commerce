@@ -11,6 +11,9 @@ import { DataScroller } from 'primereact/datascroller';
 import { Rating } from 'primereact/rating';
 import IProductListDto from '@/interfaces/IProductListDto';
 import { InputText } from 'primereact/inputtext';
+import baseUrl from '@/config/baseUrl';
+import router from 'next/router';
+import { useRouter } from 'next/navigation';
 
 interface IHeaderProps {
     children?: React.ReactNode;
@@ -19,6 +22,7 @@ interface IHeaderProps {
 const ListProduct: React.FC<IHeaderProps> = ({ children }) => {
     const [products, setProducts] = useState<IProductListDto[]>([]);
     const [searchTerm, setSearchTerm] = useState<string>('');
+    const router = useRouter();
 
     const apiAllProducts = async () => {
         try {
@@ -47,7 +51,7 @@ const ListProduct: React.FC<IHeaderProps> = ({ children }) => {
         return (
             <div className="col-12">
                 <div className="flex flex-column xl:flex-row xl:align-items-start p-4 gap-4">
-                    <img className="w-9 sm:w-16rem xl:w-10rem shadow-2 block xl:block mx-auto border-round" src={`https://primefaces.org/cdn/primereact/images/product/${data.photo}`} alt={data.name} />
+                    <img className="w-9 sm:w-16rem xl:w-10rem shadow-2 block xl:block mx-auto border-round" src={`${baseUrl}/file?productId=${data.id}&token=${sessionStorage.getItem('token')}`} alt={data.name} />
                     <div className="flex flex-column lg:flex-row justify-content-between align-items-center xl:align-items-start lg:flex-1 gap-4">
                         <div className="flex flex-column align-items-center lg:align-items-start gap-3">
                             <div className="flex flex-column gap-1">
@@ -64,7 +68,7 @@ const ListProduct: React.FC<IHeaderProps> = ({ children }) => {
                         </div>
                         <div className="flex flex-row lg:flex-column align-items-center lg:align-items-end gap-4 lg:gap-2">
                             <span className="text-2xl font-semibold">${data.value}</span>
-                            <Button icon="pi pi-shopping-cart" label="Visualizar"></Button>
+                            <Button icon="pi pi-shopping-cart" onClick={(e) => router.push(`/product/${data.id}`)} label="Visualizar"></Button>
                         </div>
                     </div>
                 </div>
